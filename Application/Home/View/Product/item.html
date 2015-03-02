@@ -1,0 +1,115 @@
+<layout name="layout" />
+
+<class class="create_product">
+    <p style="">修改产品</p>
+    <ul>
+        <form action="/home/product/update" method="post" enctype="multipart/form-data" >
+            <input type="hidden" name="id" value="{$product.id}" />
+            <li>
+                <label>编码: </label><input class="text_input" type="text" name="sku" value="{$product.sku}" /> <span>(必填)</span>
+            </li>
+            <li>
+                <label>名称: </label><input id="name_input" class="text_input" type="text" name="name" value="{$product.name}" /> <span>(必填)</span>
+            </li>
+
+            <li>
+                <label>产地: </label><input id="origin_input" class="text_input" type="text" name="origin" value="{$product.origin}" />
+            </li>
+            <li>
+                <label>车型: </label><input id="car_type_input" class="text_input" type="text" name="car_type" value="{$product.car_type}" />
+            </li>
+            <li>
+                <label>备注: </label><textarea type="text" name="remark">{$product.remark}</textarea> <span>(100字以下)</span>
+            </li>
+            <li>
+                <label>仓位: </label><input class="text_input" type="text" name="warehouse_position" style="width:80px;" value="{$product.warehouse_position}"/>
+                <label style="float:none;">库存: </label><input class="text_input" type="text" name="stock" style="width:80px;" value="{$product.stock}"/> <span>(数字)</span>
+            </li>
+            <li>
+                <label>单位: </label>
+                <select name="unit">
+                    <volist name="unit" id="vo">
+                        <option value="{$vo.unit}" <equal name="vo.unit" value="$product.unit">selected="selected"</equal>>{$vo.unit}</option>
+                    </volist>
+                </select>
+            </li>
+            <li>
+                <label>进货价:</label><input class="text_input" type="text" name="cost_price" value="{$product.cost_price}" /> <span>(必填, 数字)</span>
+            </li>
+            <li>
+                <label>批发价: </label><input class="text_input" type="text" name="wholesale_price" value="{$product.wholesale_price}" /> <span>(必填, 数字)</span>
+            </li>
+            <li>
+                <label>零售价: </label><input class="text_input" type="text" name="retail_price" value="{$product.retail_price}" /> <span>(必填, 数字)</span>
+            </li>
+            <li>
+            <label>图片: </label>
+            <div>
+                <php>
+                    for($i = 0; $i<$img_num; $i++)
+                    {
+                </php>
+                    <div class="upload_img" style="">
+                        <notempty name="images[$i]">
+                        <a class="view_image" href="/public/{$images[$i]['image']}">
+                            <img height="100" src="/public/{$images[$i]['image']}" />
+                        </a>
+                            <input class="remove_img" type=button onclick="remove_img('{$images[$i]['id']}');" value="X">
+                        <else />
+                        <input name="photo[]" type="file" style="border:none;  width:120px;" />
+                        </notempty>
+                    </div>
+                <php>
+                    }
+                </php>
+            </div>
+            </li>
+            <li>
+                <label style="clear:both;">操作:</label><input style="float:left;" class="submitbutton" type="submit" value="提交"/>
+            </li>
+        </form>
+
+    </ul>
+</class>
+<script>
+    $.getJSON('/home/product/get_autocomplete/field/name',function(data){
+        var var_list = new Array();
+        $.each(data, function(index, element){
+            var_list.push(element.name);
+        });
+        $( "#name_input" ).autocomplete({
+            source: var_list
+        });
+    });
+
+    $.getJSON('/home/product/get_autocomplete/field/origin',function(data){
+        var var_list = new Array();
+        $.each(data, function(index, element){
+            var_list.push(element.origin);
+        });
+        $( "#origin_input" ).autocomplete({
+            source: var_list
+        });
+    });
+
+    $.getJSON('/home/product/get_autocomplete/field/car_type',function(data){
+        var var_list = new Array();
+        $.each(data, function(index, element){
+            var_list.push(element.car_type);
+        });
+        $( "#car_type_input" ).autocomplete({
+            source: var_list
+        });
+    });
+
+    function remove_img(id){
+        if(confirm("确定删除图片?")){
+            location.href = '/home/product/delete_image/iid/' + id;
+        }
+    };
+
+    $('.view_image').magnificPopup({
+        type: 'image'
+    });
+
+</script>

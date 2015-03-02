@@ -1,0 +1,110 @@
+<if condition="$data['error'] eq 1">
+    <div style="text-align:center;"><p style="font-size:16px; padding:20px;">{$data['error_message']}</p></div>
+<else />
+
+    <table id="products_list" class="products_list" width="100%">
+        <tr>
+            <!--<th>ID</th>-->
+            <th class="mobile_td" width="40">编码</th>
+            <th class="mobile_td" width="40">名称</th>
+            <th class="mobile_td" width="40">车型</th>
+            <th width="40">产地</th>
+            <th width="80">备注</th>
+            <th width="20">仓位</th>
+            <th width="20">库存</th>
+            <th width="20">单位</th>
+            <if condition="$data['show_cost_price'] eq 1">
+                <th width="30">成本价</th>
+            </if>
+            <th width="30">批发价</th>
+            <th width="30">零售价</th>
+            <th class="mobile_td" width="20">图片</th>
+            <if condition="$data['operate_product'] eq 1">
+                <th class="mobile_td" width="40">操作</th>
+            </if>
+        </tr>
+        <volist name="data['products_list']" id="pd">
+            <tr class="data_line">
+            <!--<td>{$pd.id}</td>-->
+                <td class="mobile_td toggle_td">{$pd.sku}</a></td>
+                <td class="mobile_td toggle_td">{$pd.name}</td>
+                <td class="mobile_td toggle_td">{$pd.car_type}</td>
+                <td class="toggle_td">{$pd.origin}</td>
+                <td class="toggle_td">{$pd.remark}</td>
+                <td>{$pd.warehouse_position}</td>
+                <td>{$pd.stock}</td>
+                <td>{$pd.unit}</td>
+            <if condition="$data['show_cost_price'] eq 1">
+                <td>
+                    <div class="sp_father"><span class="secret_price" style="display: none;">{$pd.cost_price}</span>&nbsp;</div>
+                </td>
+            </if>
+                <td>
+                    <div class="sp_father"><span class="secret_price" style="display: none;">{$pd.wholesale_price}</span>&nbsp;</div>
+                </td>
+                <td>{$pd.retail_price}</td>
+                <td class="mobile_td">
+                    <notempty name="pd.iid">
+                        <li class='ui-state-default ui-corner-all'>
+                            <a  class='view_image' href='/home/product/view_image/pid/{$pd.id}'>
+                            <span class='ui-icon ui-icon-zoomin'></span></a></li>
+                    </notempty>
+                </td>
+            <if condition="$data['operate_product'] eq 1">
+                <td class="mobile_td">
+                    <li class="ui-state-default ui-corner-all edit_li">
+                        <a href="/home/product/item/id/{$pd.id}" target="_blank"><span class="ui-icon ui-icon-circle-arrow-e"></span></a></li>
+                    <li class="ui-state-default ui-corner-all delete_li"><a href='javascript:delete_product({$pd.id},"{$pd.sku}");' target="_blank">
+                                    <span class="ui-icon ui-icon-closethick"></span></a></li>
+                </td>
+            </if>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+
+    <script>
+        $("tr:even").addClass("even_line"); //偶数行的背景色
+        $("tr:odd").addClass("odd_line");   //奇数行的背景色
+
+        $('.products_list .data_line').mouseover(function(){
+            $(this).addClass("mouseover");
+        }).mouseout(function(){
+            $(this).removeClass("mouseover");
+        })      // 数据航鼠标效果
+
+        $('.products_list .data_line .toggle_td').click(function(){
+            $(this.parentNode).toggleClass("toggle");
+        })
+
+        $('.view_image').magnificPopup({
+            type: 'ajax',
+            alignTop: true,
+            overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
+        });
+
+        hide_secret_price();        //隐藏价格
+
+
+        function hide_secret_price(){
+            $(".secret_price").hide();
+            $(".sp_father").click(function(){
+    //            $( this).parent().parent().children().children().children('.secret_price').toggle();
+                $( this).children('.secret_price').toggle();
+            });
+        }
+
+        function delete_product(pid, sku){
+            var q = '确认删除:' + sku + '？';
+            if(confirm(q))
+                location.href = '/home/product/delete/id/' + pid;
+        }
+
+        function view_image(pid){
+            $.getJSON('/home/product/view_image/pid/' + pid, function(data){
+
+            })
+        }
+
+    </script>
+</if>

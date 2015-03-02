@@ -1,0 +1,201 @@
+[ 2015-01-11T00:36:34+08:00 ] 192.168.31.244 /Home/Login/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007576s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007707s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000982s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001053s ]
+
+[ 2015-01-11T00:48:45+08:00 ] 192.168.31.100 /home/product/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0008s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0006s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011410s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000884s ]
+
+[ 2015-01-11T00:48:46+08:00 ] 192.168.31.100 /home/product/create
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0004s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0003s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `dt_unit` [ RunTime:0.0002s ]
+SQL: SELECT * FROM `dt_unit`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009520s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009587s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000674s ]
+
+[ 2015-01-11T00:48:46+08:00 ] 192.168.31.100 /home/product/get_autocomplete/field/car_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006844s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0004s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0011s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `dt_products` [ RunTime:0.0005s ]
+SQL: SELECT DISTINCT  `car_type` FROM `dt_products`  [ RunTime:0.0051s ]
+
+[ 2015-01-11T00:48:46+08:00 ] 192.168.31.100 /home/product/get_autocomplete/field/origin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000082s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001207s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0005s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0004s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dt_products` [ RunTime:0.0006s ]
+SQL: SELECT DISTINCT  `origin` FROM `dt_products`  [ RunTime:0.0055s ]
+
+[ 2015-01-11T00:48:46+08:00 ] 192.168.31.100 /home/product/get_autocomplete/field/name
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000136s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007936s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006589s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0012s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0011s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `dt_products` [ RunTime:0.0020s ]
+SQL: SELECT DISTINCT  `name` FROM `dt_products`  [ RunTime:0.0022s ]
+
+[ 2015-01-11T00:48:47+08:00 ] 192.168.31.100 /home/product/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0003s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0003s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008526s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008609s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000848s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000906s ]
+
+[ 2015-01-11T00:48:48+08:00 ] 192.168.31.100 /home/product/create
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0004s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0003s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `dt_unit` [ RunTime:0.0002s ]
+SQL: SELECT * FROM `dt_unit`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009379s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009463s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000826s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000900s ]
+
+[ 2015-01-11T00:48:48+08:00 ] 192.168.31.100 /home/product/get_autocomplete/field/origin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005960s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0005s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0004s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dt_products` [ RunTime:0.0005s ]
+SQL: SELECT DISTINCT  `origin` FROM `dt_products`  [ RunTime:0.0023s ]
+
+[ 2015-01-11T00:48:48+08:00 ] 192.168.31.100 /home/product/get_autocomplete/field/car_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000147s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004749s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0004s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0004s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dt_products` [ RunTime:0.0006s ]
+SQL: SELECT DISTINCT  `car_type` FROM `dt_products`  [ RunTime:0.0048s ]
+
+[ 2015-01-11T00:48:48+08:00 ] 192.168.31.100 /home/product/get_autocomplete/field/name
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0005s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.0003s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7') AND `type` = 1 AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dt_products` [ RunTime:0.0005s ]
+SQL: SELECT DISTINCT  `name` FROM `dt_products`  [ RunTime:0.0022s ]
+

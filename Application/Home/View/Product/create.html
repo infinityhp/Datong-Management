@@ -1,0 +1,96 @@
+<layout name="layout" />
+
+<class class="create_product">
+    <p style="margin:10px; font-size:20px; font-weight:bold;">创建产品</p>
+    <ul>
+    <form action="/home/product/add" method="post"enctype="multipart/form-data" >
+        <li>
+            <label>编码: </label><input class="text_input" type="text" name="sku"/> (必填)
+        </li>
+        <li>
+            <label>名称: </label><input id="name_input" class="text_input" type="text" name="name"/> (必填)
+        </li>
+
+        <li>
+            <label>产地: </label><input id="origin_input" class="text_input" type="text" name="origin"/>
+        </li>
+        <li>
+            <label>车型: </label><input id="car_type_input" class="text_input" type="text" name="car_type"/>
+        </li>
+        <li>
+            <label>备注: </label><textarea type="text" name="remark"></textarea> (100字以下)
+        </li>
+        <li>
+            <label>仓位: </label><input class="text_input" type="text" name="warehouse_position" style="width:80px;"/>
+            <label style="float:none;">库存: </label><input class="text_input" type="text" name="stock" style="width:80px;"/> (数字)
+        </li>
+        <li>
+            <label>单位: </label>
+              <select name="unit">
+                        <volist name="unit" id="vo">
+                                <option value="{$vo.unit}">{$vo.unit}</option>
+                        </volist>
+                </select>
+        </li>
+
+        <li>
+            <label>进货价:</label><input class="text_input" type="text" name="cost_price"/> (必填, 数字)
+        </li>
+        <li>
+            <label>批发价: </label><input class="text_input" type="text" name="wholesale_price"/> (必填, 数字)
+        </li>
+        <li>
+            <label>零售价: </label><input class="text_input" type="text" name="retail_price"/> (必填, 数字)
+        </li>
+        <li>
+            <label>图片: </label>
+            <php>
+                for($i = 0; $i<$img_num; $i++)
+                {
+            </php>
+                <div class="upload_img" style="">
+                    <input name="photo[]" type="file" style="border:none;  width:150px;" />
+                </div>
+            <php>
+                }
+            </php>
+        </li>
+        <li>
+            <label style="clear:both;">操作:</label><input style="float:left;" class="submitbutton" type="submit" value="提交"/>
+        </li>
+    </form>
+    </ul>
+</class>
+<script>
+    $.getJSON('/home/product/get_autocomplete/field/name',function(data){
+        var var_list = new Array();
+        $.each(data, function(index, element){
+            var_list.push(element.name);
+        });
+        $( "#name_input" ).autocomplete({
+            source: var_list
+        });
+    });
+
+    $.getJSON('/home/product/get_autocomplete/field/origin',function(data){
+        var var_list = new Array();
+        $.each(data, function(index, element){
+            var_list.push(element.origin);
+        });
+        $( "#origin_input" ).autocomplete({
+            source: var_list
+        });
+    });
+
+    $.getJSON('/home/product/get_autocomplete/field/car_type',function(data){
+        var var_list = new Array();
+        $.each(data, function(index, element){
+            var_list.push(element.car_type);
+        });
+        $( "#car_type_input" ).autocomplete({
+            source: var_list
+        });
+    });
+
+
+</script>

@@ -1,0 +1,18 @@
+[ 2015-01-03T10:14:01+08:00 ] 192.168.72.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+ERR: 无法加载模块:Favicon
+
+[ 2015-01-03T11:04:29+08:00 ] 192.168.72.1 /file/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001224s ]
+ERR: 无法加载模块:File
+
+[ 2015-01-03T16:53:21+08:00 ] 192.168.72.1 /public/pid/uploads/2015-01-03/54a78dd21ecc9.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000274s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002142s ]
+ERR: 无法加载模块:Public
+

@@ -1,0 +1,29 @@
+<layout name="layout" />
+
+<class class="">
+    <p style="margin:10px; font-size:20px; font-weight:bold;">回收站</p>
+
+    <table id="products_list" class="products_list" width="1200">
+        <tr>
+            <th width="40">编码</th><th width="40">名称</th>
+            <th width="40">车型</th><th width="40">产地</th><th width="40">备注</th>
+            <th width="20">仓位</th><th width="20">库存</th><th width="20">单位</th>
+            <th width="30">成本价</th><th width="30">批发价</th><th width="30">零售价</th>
+        </tr>
+        <volist name="re_prod" id="pd">
+            <tr>
+            <td>{$pd.sku}</td>
+            <td>{$pd.name}</td>
+            <td>{$pd.car_type}</td><td>{$pd.origin}</td><td>{$pd.remark}</td>
+            <td>{$pd.warehouse_position}</td><td>{$pd.stock}</td>
+                <td>{$pd.unit}</td>
+            <td>{$pd.cost_price}</td><td>{$pd.wholesale_price}</td><td>{$pd.retail_price}</td>
+            </tr>
+        </volist>
+    </table>
+<script>
+    $("tr:even").addClass("even_line");//偶数行的背景色
+    $("tr:odd").addClass("odd_line");//奇数行的背景色
+</script>
+
+</class>

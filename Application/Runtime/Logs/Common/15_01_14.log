@@ -1,0 +1,24 @@
+[ 2015-01-14T15:52:51+08:00 ] 192.168.1.173 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003499s ]
+ERR: 无法加载模块:Favicon
+
+[ 2015-01-14T16:06:17+08:00 ] 192.168.1.173 /rewrwr
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001062s ]
+ERR: 无法加载模块:Rewrwr
+
+[ 2015-01-14T16:06:17+08:00 ] 192.168.1.173 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000926s ]
+ERR: 无法加载模块:Favicon
+
+[ 2015-01-14T16:06:22+08:00 ] 192.168.1.173 /rewrwr
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+ERR: 无法加载模块:Rewrwr
+

@@ -1,0 +1,55 @@
+<layout name="layout" />
+
+
+<div class="searchbar">
+    <!--<form class="searchbar_form" id="search_product" action="/home/product/search" method="post">-->
+    <div class="searchbar_form">
+        <!--<form>-->
+        <span>搜索编号/车型/名称: </span><input id="search_input" class="search_input" type="text" name="keyword"/>
+        <button id="search_button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+            查询</button>
+        <!--<input type="submit" value="搜索"/>-->
+        <!--</form>-->
+    </div>
+    <!--</form>-->
+</div>
+<div id="search_result" class="search_result">
+
+</div>
+<script>
+
+    $(document).bind('keydown', 'Ctrl+Z', function assets() {
+        $("#search_input")[0].focus();
+    });
+
+    $("#search_input").focus(
+            function(){
+                $("#search_input").css("background-color","white");
+                $("#search_input").css("border","1px solid #666");
+            }
+    );
+
+    $("#search_input").blur(
+            function(){
+                $("#search_input").css("background-color","#eee");
+                $("#search_input").css("border","1px solid white");
+            }
+    );
+
+    $('#search_input').bind('keypress',function(event){
+        if(event.keyCode == "13")
+        {
+            $("#search_button").click();
+        }
+    });
+
+    $("#search_button").click(function(){
+        var keyword = $("#search_input").val();
+        $.post("/home/product/search_result?t=" + Math.random(),{keyword:keyword},function(result){
+            $("#search_result").html(result);
+        });
+    });
+
+
+</script>
+
